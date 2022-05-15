@@ -21,4 +21,8 @@ public class TeacherController {
     public List<Teacher> getTeachers() {
         return dao.getAllTeacher();
     }
+    @RequestMapping("/")
+    public String home() {
+        return "Teacher Service up and Running";
+    }
 }

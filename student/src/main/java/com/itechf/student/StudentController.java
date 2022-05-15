@@ -21,4 +21,8 @@ public class StudentController {
     public List<Student> getStudents() {
         return dao.getAllStudent();
     }
+    @RequestMapping("/")
+    public String home() {
+        return "Student Service up and Running";
+    }
 }

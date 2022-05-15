@@ -5,12 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Student {
+@NoArgsConstructor
+public class Teacher {
+
     private Integer id;
     private String name;
     private String ClassName;
-    private Teacher ClassTeacher;
 
 }
