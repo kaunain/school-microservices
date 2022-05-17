@@ -2,8 +2,6 @@ version: "3.9"
 services:
   eureka:
     image: eureka
-    expose:
-      - 8761
     ports:
       - "8761:8761"
     environment:
