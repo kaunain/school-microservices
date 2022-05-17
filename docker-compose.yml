@@ -10,8 +10,12 @@ services:
     image: student
     ports:
       - "8081:8081"
-    depends_on:
-      - eureka
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://eureka:8761/eureka/
+  teacher:
+    image: teacher
+    ports:
+      - "8082:8082"
     environment:
       eureka.client.serviceUrl.defaultZone: http://eureka:8761/eureka/
   
