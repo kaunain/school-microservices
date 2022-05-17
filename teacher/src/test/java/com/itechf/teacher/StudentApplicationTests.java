@@ -1,10 +1,10 @@
-package com.itechf.student;
+package com.itechf.teacher;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class StudentApplicationTests {
+class TeacherApplicationTests {
 
 	@Test
 	void contextLoads() {

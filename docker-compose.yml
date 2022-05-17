@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  eureka:
+    image: eureka
+    expose:
+      - 8761
+    ports:
+      - "8761:8761"
+    networks:
+      - ms-network
+    environment:
+      eureka.instance.hostname: eureka
+  student:
+    image: student
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka
+    networks:
+      - ms-network
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://172.18.0.1:8761/eureka/
+    
+networks:
+  ms-network:
+    driver: bridge
