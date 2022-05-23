@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class StudentDao {
+public class StudentRepository {
 
     private List<Student> stuList = List.of(new Student(1, "Amit", "12th", null), new Student(2, "Deepak", "9th", null), new Student(3, "Vivek", "10th", null));
 
