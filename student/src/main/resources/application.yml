@@ -4,4 +4,8 @@ server:
 spring:
   application:
     name: student
-    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 public class StudentController {
 
     @Autowired
-    private StudentDao dao;
+    private StudentRepository dao;
 
     @Autowired
     private RestTemplate restTemplate;
