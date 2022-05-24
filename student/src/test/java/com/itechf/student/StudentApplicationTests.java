@@ -13,7 +13,6 @@ class StudentApplicationTests {
 		System.out.println("Testing Load...");
 	}
 
-	@Test
 	void isStudentExist() {
 		// Student s = new Student(3, "Test", "12th", null);
 		Student s = studentRepository.getStudent(3);

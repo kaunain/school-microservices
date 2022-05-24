@@ -51,3 +51,10 @@ Steps as given below
     ResponseEntity<Teacher> teacher = restTemplate.getForEntity(uri, Teacher.class);
     System.out.println(teacher.getBody());
 ```
+
+## How to refresh client microservice from spring boot config server
+
+- add actuator dependency
+- allow endpoint include *
+- add annotation refresh scope
+- call actuator/refresh

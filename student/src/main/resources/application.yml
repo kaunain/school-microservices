@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: student
+  profiles:
+    default: dev
 management:
   endpoints:
     web:
