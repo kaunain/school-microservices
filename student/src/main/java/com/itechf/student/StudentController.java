@@ -1,8 +1,11 @@
 package com.itechf.student;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,12 +32,20 @@ public class StudentController {
         stu.setClassTeacher(teacher.getBody());
         return stu;
     }
+    @RequestMapping("/get/{id}")
+    @Cacheable("student")
+    public Student getOneStudent(@PathVariable Integer id) {
+        Student stu = new Student(id, "Vivek", "12th", null, new Date());
+        return stu;
+    }
+
     @RequestMapping("/all")
-    public List<Student> getStudents() {
-        return dao.getAllStudent();
+    public ResponseEntity<List<Student>> getStudents() {
+        return new ResponseEntity<List<Student>>(dao.getAllStudent(), HttpStatus.OK);
     }
     @RequestMapping("/")
     public String home() {
         return "Student Service up and Running";
     }
+
 }
